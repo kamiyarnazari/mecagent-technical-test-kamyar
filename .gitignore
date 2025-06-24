@@ -1,10 +1,66 @@
-# Python-generated files
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.py[cod]
+*$py.class
 
-# Virtual environments
-.venv
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode / PyCharm settings
+.vscode/
+.idea/
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.xlsx
+*.pickle
+*.pkl
+*.h5
+
+# Model weights and logs
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Hugging Face cache
+~/.cache/huggingface/
+**/.cache/huggingface/
+**/transformers_cache/
+
+# Datasets cache
+~/.cache/datasets/
+**/.cache/datasets/
+
+# W&B logs
+wandb/
+*.wandb
+
+# Output directories
+outputs/
+checkpoints/
+logs/
+runs/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS / misc
+.DS_Store
+Thumbs.db
+
+# Environment and config
+.env
+.env.*
+config.yaml
+config.json
