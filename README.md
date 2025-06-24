@@ -65,21 +65,27 @@ This resulted in higher Valid Syntax Rates and improved geometric alignment.
 ##  Step 4: Bottlenecks and Observations
 
 ### Bottlenecks:
--  Lack of loop context or multiple-sketch memory
--  Limited training time for full convergence
--  Errors in `loop1` generation not resolved without reference tracking
--  Visual encoder not fine-tuned with decoder jointly (yet)
+- Lack of Structural Abstraction: The model treats code as flat text, without leveraging part-level or hierarchical CAD semantics.
+- No Runtime Feedback Loop: Code is generated without execution-aware correction, leading to compounding syntax errors.
+- Weak Vision-Language Fusion: Visual features are encoded once and not referenced during decoding, limiting fine-grained alignment.
+- Missing Spatial and Geometric Priors: The model struggles to enforce symmetry or layout constraints common in CAD design.
+- Prompt and Memory Limitations: Prompting is static and lacks adaptive tuning or reuse of geometry patterns across samples.
+
 
 ---
 
-##  Step 5: Future Enhancements (from GenCAD repo)
+##  Step 5: Future Enhancements 
 
--  **Train ResNet + Decoder jointly** for better alignment
--  **Use multi-sketch memory** or recurrence for CAD programs with multiple operations
--  **Implement CAD-Code-aware loss** using structural program diffs
--  **Pretrain with synthetic CAD corpus** before fine-tuning on GenCAD
--  **Use tool-augmented LLMs** (e.g. GPT4-o + debugger)
--  **Evaluation with execution-based metrics** (e.g., rendered IoU)
+- Grammar-Aware Decoding: Introduce syntax-constrained generation or AST-based decoding to reduce invalid CadQuery outputs and better handle indentation-sensitive Python code.
+
+- Cross-Attention Fusion: Replace simple visual prepending with a vision–language transformer using cross-attention for more contextual alignment between image features and code tokens.
+
+- Reinforcement from Execution Feedback: Use mesh-based evaluations (e.g., IoU) as reward signals in fine-tuning to optimize geometry-level accuracy rather than only token-level loss.
+
+- Multi-Step Self-Correction: Enable iterative refinement loops where the model diagnoses and repairs its own output using additional prompts.
+
+- Curriculum Training: Start with simple primitives and progressively move to complex multi-sketch parts to improve learning stability and accuracy.
+
 
 ---
 
