@@ -3,7 +3,7 @@
 ## The Task
 Create the best CadQuery code generator model.
 
-![GenCAD demonstrates generative CAD models](assets/demo.png)
+![GenCAD demonstrates generative CAD models](assets/demo.jpg)
 
 ### Challenge Steps:
 1. Load the dataset (147K pairs of Images/CadQuery code).
@@ -27,7 +27,7 @@ After reviewing recent works and their approaches (see the table below), the fol
 
 Our goal: develop a **practical**, **open**, and **extensible** solution that aligns with CadQuery’s structure, and is trainable on commodity GPUs.
 
-![OVERVIEW OF SOME EXISTING APPROACHES FOR CONDITIONAL, EDITABLE-CAD GENERATION](assets/model_comparison.png)
+![OVERVIEW OF SOME EXISTING APPROACHES FOR CONDITIONAL, EDITABLE-CAD GENERATION](assets/model_comparison.jpg)
 
 
 Source: Doris, A. C., Alam, M. F., Nobari, A. H., & Ahmed, F. (2025, May 20). CAD-Coder: An Open-Source Vision-Language model for Computer-Aided design code generation. [arXiv:2505.14646](https://arxiv.org/abs/2505.14646)
